@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.home.androidmvvmarchitecturalpatterndemo.viewmodel.MainViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:background="#1D65A6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:textColor="#F2A104"
+                android:id="@+id/text_view_case_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{`case_name︰`+viewmodel.repository.culturalAssets[viewmodel.repository.currentPosition].caseName}"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:textColor="#F2A104"
+                android:id="@+id/text_view_land_scope"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{`land_scope︰`+viewmodel.repository.culturalAssets[viewmodel.repository.currentPosition].landScope}"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="@id/text_view_case_name"
+                app:layout_constraintStart_toStartOf="@id/text_view_case_name"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_case_name" />
+
+            <TextView
+                android:textColor="#F2A104"
+                android:id="@+id/text_view_building_brief"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{`land_scope︰`+viewmodel.repository.culturalAssets[viewmodel.repository.currentPosition].buildingBrief}"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="@id/text_view_case_name"
+                app:layout_constraintStart_toStartOf="@id/text_view_case_name"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_land_scope" />
+
+            <TextView
+                android:textColor="#F2A104"
+                android:id="@+id/text_view_building_actual_state"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@{`land_scope︰`+viewmodel.repository.culturalAssets[viewmodel.repository.currentPosition].buildingActualState}"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/text_view_case_name"
+                app:layout_constraintStart_toStartOf="@id/text_view_case_name"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_building_brief" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
